@@ -1,0 +1,48 @@
+*&---------------------------------------------------------------------*
+*& Include          ZKDE_CORR_EXO2_TOP
+*&---------------------------------------------------------------------*
+TABLES : LIKP, LIPS, VBRK.
+
+TYPES : BEGIN OF ty_likp,
+          vbeln TYPE likp-vbeln,
+          erdat TYPE likp-erdat,
+          vstel TYPE likp-vstel,
+          vkorg TYPE likp-vkorg,
+        END OF ty_likp,
+        ty_t_likp type table of ty_likp,
+        BEGIN OF ty_lips,
+          vbeln TYPE lips-vbeln,
+          posnr TYPE lips-posnr,
+          matnr TYPE lips-matnr,
+          werks TYPE lips-werks,
+          lfimg TYPE lips-lfimg,
+          meins TYPE lips-meins,
+        END OF ty_lips,
+        ty_t_lips type table of ty_lips,
+        BEGIN OF ty_marc,
+          matnr TYPE marc-matnr,
+          werks TYPE marc-werks,
+          ekgrp TYPE marc-ekgrp,
+        END OF ty_marc,
+        ty_t_marc type table of ty_marc,
+        BEGIN OF ty_vbrk,
+          vbeln TYPE vbrk-vbeln,
+          fkart TYPE vbrk-fkart,
+          fkdat TYPE vbrk-fkdat,
+          waerk TYPE vbrk-waerk,
+        END OF ty_vbrk,
+        ty_t_vbrk type table of ty_vbrk,
+        BEGIN OF ty_vbrp,
+          vbeln TYPE vbrp-vbeln,
+          posnr TYPE vbrp-posnr,
+          fkimg TYPE vbrp-fkimg,
+          ntgew TYPE vbrp-ntgew,
+          gewei TYPE vbrp-gewei,
+          netwr TYPE vbrp-netwr,
+          vrkme TYPE vbrp-vrkme,
+          vgbel TYPE vbrp-vgbel,
+          vgpos TYPE vbrp-vgpos,
+        END OF Ty_vbrp,
+        ty_t_vbrp type table of ty_vbrp.
+
+ DATA : gt_final TYPE ZTCORRECTION.
